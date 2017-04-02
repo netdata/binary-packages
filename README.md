@@ -1,1 +1,47 @@
 # binary-packages
+
+This repo hosts binary packages for netdata.
+
+## netdata `.run` files
+
+Files ending in `.run` are Linux binary self-extracting shell scripts, generated with [`makeself`](https://github.com/megastep/makeself).
+
+To use one, **download it and run it**.
+
+### installs in `/opt/netdata`
+
+The package will install everything in `/opt/netdata` (remember to prepend `/opt/netdata` to command examples found in the netdata wiki).
+
+The following changes will be made to the system:
+
+1. user `netdata` will be added
+2. group `netdata` will be added
+3. logrotate condiguration will be added at `/etc/logrotate.d/netdata`
+4. if the system is running with systemd, the file `/etc/systemd/system/netdata.service` will be created
+5. if the system is not running systemd, then depending on the distribution and version the file `/etc/init.d/netdata` will be added. This works for older Ubuntu, Debian, CentOS and for OpenRC based Gentoo systems.
+
+Other than the above, the system is not altered in any way.
+
+### Statically linked
+
+All programs included in the archive are statically linked and do not depend on any system library. The operating system is expect to provide very basic tools, like `tar`, `gzip`, etc. They can be used even if the system is just a `busybox`. For example, they run on [CirrOS](https://launchpad.net/cirros).
+
+You can use these binary files for installing netdata:
+
+1. On ancient Linux installations, that you cannot update for a reason.
+2. On Linux distributions that do not provide a package management system.
+
+### Key dependencies included
+
+These packages include:
+
+1. statically linked `BASH`, version 4+
+2. statically linked `curl`, version 7.53.1+
+3. statically linked `fping`, version 3.16+
+4. statically linked `netdata`, version 1.6+, with statically linked `apps.plugin`.
+
+### install and update
+
+The package can be used to update an existing installation made by another version of itself.
+
+If you want to use these packages on system that you had installed netdata by source, we suggest to uninstall the previous version first. If you don't uninstall it, this package will fail to update your system properly (i.e. it will not overwrite the existing `/etc/systemd/system/netdata.service`, `/etc/logrotate.d/netdata`, etc).
