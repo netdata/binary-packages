@@ -14,17 +14,17 @@ The package will install everything in `/opt/netdata` (remember to prepend `/opt
 
 The following changes will be made to the system:
 
-1. user `netdata` will be added
-2. group `netdata` will be added
-3. logrotate condiguration will be added at `/etc/logrotate.d/netdata`
-4. if the system is running with systemd, the file `/etc/systemd/system/netdata.service` will be created
+1. user `netdata` will be added.
+2. group `netdata` will be added.
+3. logrotate configuration will be added at `/etc/logrotate.d/netdata`.
+4. if the system is running `systemd`, the file `/etc/systemd/system/netdata.service` will be created.
 5. if the system is not running systemd, then depending on the distribution and version the file `/etc/init.d/netdata` will be added. This works for older Ubuntu, Debian, CentOS and for OpenRC based Gentoo systems.
 
 Other than the above, the system is not altered in any way.
 
 ### Statically linked
 
-All programs included in the archive are statically linked and do not depend on any system library. The operating system is expect to provide very basic tools, like `tar`, `gzip`, etc. They can be used even if the system is just a `busybox`. For example, they run on [CirrOS](https://launchpad.net/cirros).
+All programs included in the package are statically linked and do not depend on any system library. The operating system is expected to provide very basic tools, like `tar`, `gzip`, etc, so they can be used even if the system is just a `busybox`. For example, these packages run on [CirrOS](https://launchpad.net/cirros).
 
 You can use these binary files for installing netdata:
 
@@ -42,6 +42,6 @@ These packages include:
 
 ### install and update
 
-The package can be used to update an existing installation made by another version of itself.
+The packages can be used to update an existing installation made by another version of them.
 
-If you want to use these packages on system that you had installed netdata by source, we suggest to uninstall the previous version first. If you don't uninstall it, this package will fail to update your system properly (i.e. it will not overwrite the existing `/etc/systemd/system/netdata.service`, `/etc/logrotate.d/netdata`, etc).
+If you want to use these packages on systems that you have installed netdata by source, we suggest to **uninstall the previous version first**. If you don't uninstall it, these package will fail to update your system properly (i.e. they will not overwrite the existing `/etc/systemd/system/netdata.service`, `/etc/logrotate.d/netdata`, `/etc/init.d/netdata`).
