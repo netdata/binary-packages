@@ -9,9 +9,6 @@ DST="/usr/src/binary-packages.git"
 # load functions
 . "${SRC}/installer/functions.sh"
 
-if [ 0 = 1 ]
-then
-
 cd "${SRC}"
 
 # fetch the latest source, overwriting any changes made
@@ -24,8 +21,6 @@ run ./netdata-installer.sh --dont-wait
 
 # build the static netdata
 run ./makeself/build-x86_64-static.sh
-
-fi
 
 # read the latest file generated
 latest=$(run readlink "${SRC}/netdata-latest.gz.run")
