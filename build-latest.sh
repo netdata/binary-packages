@@ -1,13 +1,13 @@
 #!/bin/bash
 
-# fail if any command fails
-set -e
-
 SRC="/usr/src/netdata.git"
 DST="/usr/src/binary-packages.git"
 
 # load functions
 . "${SRC}/installer/functions.sh"
+
+# fail if any command fails
+set -e
 
 cd "${SRC}"
 
