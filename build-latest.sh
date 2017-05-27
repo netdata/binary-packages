@@ -37,4 +37,4 @@ run ln -s "${latest}" netdata-latest.gz.run
 
 run git add "${latest}"
 run git commit -a -m "added ${latest}"
-run echo git push
+run git push

@@ -8,6 +8,19 @@ Files ending in `.run` are Linux binary self-extracting shell scripts, generated
 
 To use one, **download it and run it**.
 
+To install the latest version use this:
+
+```sh
+bash <(curl -Ss https://my-netdata.io/kickstart-static64.sh)
+```
+
+If your shell fails to handle the above one liner, do this:
+
+```sh
+curl -Ss https://my-netdata.io/kickstart-static64.sh >/tmp/kickstart-static64.sh
+sh /tmp/kickstart-static64.sh
+```
+
 ### installs in `/opt/netdata`
 
 The package will install everything in `/opt/netdata` (remember to prepend `/opt/netdata` to command examples found in the netdata wiki).
