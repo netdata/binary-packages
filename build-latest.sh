@@ -12,8 +12,8 @@ set -e
 cd "${SRC}"
 
 # fetch the latest source, overwriting any changes made
-#run git fetch --all
-#run git reset --hard origin/master
+run git fetch --all
+run git reset --hard origin/master
 run git pull
 
 # make sure it works
