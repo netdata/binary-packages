@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd /usr/src/binary-packages.git || exit 1
+screen -d -m './build-latest.sh'
