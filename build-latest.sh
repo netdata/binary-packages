@@ -4,7 +4,7 @@ SRC="/usr/src/netdata.git"
 DST="/usr/src/binary-packages.git"
 
 # load functions
-. "${SRC}/installer/functions.sh"
+. "${SRC}/packaging/installer/functions.sh" || exit 1
 
 # fail if any command fails
 set -e
@@ -20,7 +20,7 @@ run git pull
 run ./netdata-installer.sh --dont-wait
 
 # build the static netdata
-run ./makeself/build-x86_64-static.sh
+run ./packaging/makeself/build-x86_64-static.sh
 
 # read the latest file generated
 latest=$(run readlink "${SRC}/netdata-latest.gz.run")
