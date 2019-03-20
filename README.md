@@ -1,6 +1,6 @@
-# binary-packages
+# binary-packages (**DEPRECATED**)
 
-This repo hosts binary packages for netdata.
+This repo hosts older binary packages for netdata. Please use the [releases page](https://github.com/netdata/netdata/releases) for newer binary packages.
 
 ## netdata `.run` files
 
