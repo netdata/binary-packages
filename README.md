@@ -1,3 +1,10 @@
+# IMPORTANT NOTICE
+Over the past few months, we have deprecated the usage of this repository.
+Our netdata is supported through https://github.com/netdata/netdata repository.
+Our nightly releases are no longer hosted here, we have moved to a different hosting solution for this.
+Should you wish to install netdata, you should read our documentation section in https://netdata.cloud and follow the relative instructions on how to do so.
+
+
 # binary-packages (**DEPRECATED**)
 
 This repo hosts older binary packages for netdata. Please use the [releases page](https://github.com/netdata/netdata/releases) for newer binary packages.
